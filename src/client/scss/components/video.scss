@@ -18,3 +18,44 @@
     }
   }
 }
+.video__data {
+  .thumbs-icon {
+    display: flex;
+    justify-content: space-around;
+    #thumbs-up {
+      &:hover {
+        color: cornflowerblue;
+      }
+      font-size: 50px;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+    #thumbs-down {
+      font-size: 50px;
+      &:hover {
+        color: cornflowerblue;
+      }
+    }
+  }
+  gap: 10px;
+  .video__title {
+    text-align: left;
+    margin-left: 20px;
+  }
+  .video__owner {
+    text-align: left;
+    margin-left: 20px;
+  }
+  .video__createdAt {
+    text-align: left;
+    margin-left: 20px;
+    text-decoration: underline;
+  }
+  .edit__video {
+    text-align: right;
+  }
+  .delete__video {
+    text-align: right;
+  }
+}

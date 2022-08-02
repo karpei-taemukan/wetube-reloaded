@@ -22,18 +22,23 @@ block content
 
   div.video__data
       p.video__title=video.title 
+      div.thumbs-icon  
+        i#thumbs-up.fas.fa-thumbs-up
+        i#thumbs-down.fas.fa-thumbs-down
       small.video__owner Uploaded by 
           a(href=`/users/${video.owner._id}`)=video.owner.name
       small.video__createdAt=new Date(video.createdAt).toLocaleDateString("ko-kr", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}) 
       if String(video.owner._id) === String(loggedInUser._id)  
-          a(href=`${video.id}/edit`) Edit video &rarr;
+          a.edit__video(href=`${video.id}/edit`) Edit video &rarr;
           br
-          a(href=`${video.id}/delete`) Delete video &rarr;
+          a.delete__video(href=`${video.id}/delete`) Delete video &rarr;
   if loggedIn        
       div.video__add-comments  
           form.video__comment-form#commentForm
-            textarea(cols="30", rows="10", placeholder="Write a nice commment...")
-            button Add Comment     
+            a(href=`/users/${loggedInUser._id}`)
+                img.header__avatar(src="/" + loggedInUser.avatarUrl,crossorigin)
+            textarea.video__comment-form-textarea(cols="50", rows="3", placeholder="Write a nice commment...")
+            button.video__comment-form-button Add Comment     
       div.video__comments
        ul 
         each comment in  video.comments.reverse()

@@ -32,4 +32,42 @@
     color: black;
     margin-bottom: 10px;
   }
+  .deleteButton {
+    cursor: pointer;
+  }
+}
+.video__add-comments {
+  border-top: 1px solid white;
+  margin-top: 300px;
+  margin-left: 60px;
+  position: relative;
+  .video__comment-form {
+    position: absolute;
+    top: -200px;
+    left: 200px;
+    border: none;
+    .header__avatar {
+      position: absolute;
+      left: -80px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    .video__comment-form-textarea {
+      position: relative;
+      width: 100%;
+      border: none;
+      resize: none;
+      background-color: rgba($color: $bg, $alpha: 0.7);
+    }
+    .video__comment-form-button {
+      margin-left: 300px;
+      margin-top: 30px;
+      border-radius: 20px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }
