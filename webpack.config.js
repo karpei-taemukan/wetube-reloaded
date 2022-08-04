@@ -14,8 +14,8 @@ module.exports = {
     plugins: [new MiniCssExtractPlugin({
         filename: "css/styles.css",
 })],
-watch: true, // npm run assets을 매번 실행 안해도 됌
-mode: "development",//mode 설정을 안해주면 webpack은 prodution mode
+//watch: true, // npm run assets을 매번 실행 안해도 됌 development에서만 watch: true 실행해야됨
+//mode: "development",//mode 설정을 안해주면 webpack은 prodution mode
     // 그렇게되면 코드를 다 압축함 개발중에는 그러면 안됨
     output: { 
         filename: "js/[name].js", // 결과물을 위해 파일명 지정

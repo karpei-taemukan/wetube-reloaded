@@ -16,6 +16,7 @@ const logger = morgan("dev");
 
 app.set("view engine", "pug");
 app.set("views", process.cwd() + '/src/views');
+//cwd--> node를 실행한 폴더위치 즉, package.json을 갖고 있는 폴더를 의미 ( (root폴더) src폴더 밖에 있는 것들)
 app.use(logger);
 app.use(express.urlencoded({extended:true}));
 //app.use(express.text());
