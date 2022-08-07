@@ -36,7 +36,7 @@ block content
       div.video__add-comments  
           form.video__comment-form#commentForm
             a(href=`/users/${loggedInUser._id}`)
-                img.header__avatar(src="/" + loggedInUser.avatarUrl,crossorigin)
+                img.header__avatar(src=loggedInUser.avatarUrl,crossorigin)
             textarea.video__comment-form-textarea(cols="50", rows="3", placeholder="Write a nice commment...")
             button.video__comment-form-button Add Comment     
       div.video__comments
