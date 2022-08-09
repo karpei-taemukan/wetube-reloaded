@@ -19,6 +19,9 @@ const fullScreenBtnIcon = fullScreenBtn.querySelector("i");
 
 const textarea = document.querySelector("textarea");
 
+const thumbsUp = document.getElementById("thumbs-up");
+const thumbsDown = document.getElementById("thumbs-down");
+
 const formatTime = (seconds) => {
  return   new Date(seconds*1000).toISOString().substring(14,19);
 }
@@ -163,6 +166,31 @@ const handleEnded = () => {
 //그래서 GET요청을 할 필요가 없다
 };
 
+const thumbsUpClicked = (event) => {
+    event.target.style.color = "white"
+    thumbsUp.addEventListener("click", thumbsUpClick);
+    thumbsUp.removeEventListener("click", thumbsUpClicked);
+}
+
+const thumbsUpClick = (event) => {
+    event.target.style.color = "cornflowerblue"
+    thumbsUp.removeEventListener("click", thumbsUpClick);
+    thumbsUp.addEventListener("click", thumbsUpClicked);
+}
+
+const thumbsDownClicked = (event) => {
+    event.target.style.color = "white"
+    thumbsDown.addEventListener("click", thumbsDownClick);
+    thumbsDown.removeEventListener("click", thumbsDownClicked);
+}
+
+const thumbsDownClick = (event) =>{  
+    event.target.style.color = "cornflowerblue"
+    thumbsDown.removeEventListener("click", thumbsDownClick);
+    thumbsDown.addEventListener("click", thumbsDownClicked);
+}
+
+
 playBtn.addEventListener("click", handlePlayClick);
 window.addEventListener("keydown", handlePlayWindow);
 muteBtn.addEventListener("click", handleMuteClick);
@@ -178,3 +206,6 @@ videoContainer.addEventListener("mouseleave", handleMouseLeave);
 video.addEventListener("click", handlePlayClick);
 document.addEventListener("keydown", handleKeyDown);
 video.addEventListener("ended", handleEnded);
+
+thumbsUp.addEventListener("click", thumbsUpClick);
+thumbsDown.addEventListener("click", thumbsDownClick);
